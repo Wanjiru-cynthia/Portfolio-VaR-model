@@ -2,7 +2,7 @@
 
 ## Overview
 This project implements a quantitative risk model that estimates the Value at Risk (VaR) 
-of a 5-stock equally weighted portfolio using two methodologies — Historical Simulation 
+of a 5-stock equally weighted portfolio using two methodologies, Historical Simulation 
 and Parametric VaR.
 
 ## Portfolio
@@ -35,8 +35,20 @@ to mathematically calculate the loss threshold.
 ## Interpretation
 There is a 5% probability that this portfolio loses more than 1.80% of its value 
 on any given trading day. The 0.34% gap between methods indicates slight fat tails 
-in the return distribution which is consistent with real market stress events captured 
+in the return distribution, consistent with real market stress events captured 
 in the 2020-2024 period.
+
+## Recommendations
+- On a $1,000,000 portfolio, the daily risk threshold is approximately $18,000
+- The parametric estimate of -2.14% is more conservative. Use this for capital 
+  reservation and regulatory reporting
+- The 0.34% gap between methods signals fat tail risk stress testing against 
+  crisis scenarios ( such as the 2008 financial crisis and COVID-19 pandemic) is advised before increasing leverage
+- Equal weighting may not be optimal. Visual inspection of the return 
+  distribution suggests XOM and JNJ exhibit higher volatility relative 
+  to their contribution to portfolio returns. A mean-variance optimization 
+  in the next phase will identify whether reallocating weight toward AAPL 
+  and SPY could reduce overall VaR while maintaining target returns.
 
 ## Tools
 - Python
